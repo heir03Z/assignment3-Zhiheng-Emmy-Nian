@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Amazing app to help you find nearest MBTA station</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="content-section">
+        <form method='POST' action=''>
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Hello! Please enter a place name below</legend>
+                <div class="form-group">
+                    {{ form.placename.label(class="form-control-label") }}
+                    {{ form.placename(class="form-control form-control-lg") }}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+{% endblock %}
